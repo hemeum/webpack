@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -18,5 +19,10 @@ module.exports = {
             'browser': path.resolve(__dirname, 'path/to/browser')
           },
         extensions: [".ts", ".js", ".tsx", ".jsx"]
-     }
+     },
+     plugins: [
+        new HtmlPlugin({
+            template: './public/index.html'
+        })
+     ]
 }
